@@ -9,7 +9,7 @@
         <h2 id="list-film-label">Main player</h2>
     </div>
     <div class="col-md-4" style="padding: 0">
-        <h4 id="list-film-label">Các tập phim</h4>
+        <h4 id="list-film-label">Eposide</h4>
     </div>
 @endsection
 
