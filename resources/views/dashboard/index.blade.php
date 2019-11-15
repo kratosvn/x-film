@@ -6,13 +6,7 @@
 
 @section('body')
 <div class="col-md-8 container-flex" style="width: 560px">
-	<div id="carousel-id" class="carousel slide" data-ride="carousel">
-		<div class="carousel-inner">
-			<div class="item active">
-				<iframe width="560" height="350" src="https://www.youtube.com/embed/E4K7sqFsQ-k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			</div>
-		</div>
-	</div>
+	<iframe width="700" height="400" src="https://www.youtube.com/embed/E4K7sqFsQ-k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 <div class="col-md-4">
 <!-- 	<h4>Danh sách phim</h4>
