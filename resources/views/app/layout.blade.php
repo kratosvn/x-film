@@ -15,12 +15,14 @@
     <meta property="og:site_name" content="X-Film" />
     <meta property="article:section" content="Film" />
     <meta property="og:image" content="http://res.cloudinary.com/dzaidinjj/image/upload/v1495904041/Nguoi-phan-xu-660_rknnyy.jpg" />
-
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"  crossorigin="anonymous">
     <title>X-Film</title>
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     <link href="https://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/fontawesome.css">
+    <link rel="stylesheet" type="text/css" href="/css/fontawesome.min.css">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
     @yield('css')
 </head>
