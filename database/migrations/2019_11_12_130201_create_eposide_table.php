@@ -16,9 +16,9 @@ class CreateEposideTable extends Migration
         Schema::create('eposide', function (Blueprint $table) {
             $table->increments('id');
             $table->string('id_youtobe', 20);
-            $table->varchar('name', 100);
+            $table->string('name', 100);
             $table->text('description');
-            $table->int('eposode');
+            $table->integer('eposode');
             $table->timestamps();
         });
     }
