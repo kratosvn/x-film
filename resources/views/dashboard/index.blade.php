@@ -24,88 +24,23 @@ $(function(){
 </div>
 <div class="col-md-4" id="container">
 	<h4>Danh sách phim</h4>
-	<div class="col-md-4">
-		<img onclick="editSrc('https://www.youtube.com/embed/dkFnNB-s-G4')"id="img" class="style-scope yt-img-shadow" alt="" width="100" src="https://i.ytimg.com/vi/sG3AmfvbNVk/hqdefault.jpg?sqp=-oaymwEYCKgBEF5IVfKriqkDCwgBFQAAiEIYAXAB&amp;rs=AOn4CLBeYRX8X8bWjv3iIzw5QLu6UZ0bZg">
-
-		<img onclick="editSrc('https://www.youtube.com/embed/PJDtKo1VlTA')" id="img" class="style-scope yt-img-shadow" alt="" width="100" style="padding-top: 8px;"  src="https://i.ytimg.com/vi/sG3AmfvbNVk/hqdefault.jpg?sqp=-oaymwEYCKgBEF5IVfKriqkDCwgBFQAAiEIYAXAB&amp;rs=AOn4CLBeYRX8X8bWjv3iIzw5QLu6UZ0bZg">
-
-		<img onclick="editSrc('https://www.youtube.com/embed/v6n_xndNH3k')" id="img" class="style-scope yt-img-shadow" alt="" width="100" style="padding-top: 10px;" src="https://i.ytimg.com/vi/sG3AmfvbNVk/hqdefault.jpg?sqp=-oaymwEYCKgBEF5IVfKriqkDCwgBFQAAiEIYAXAB&amp;rs=AOn4CLBeYRX8X8bWjv3iIzw5QLu6UZ0bZg">
-		
-		<img onclick="editSrc('https://www.youtube.com/embed/8x2NjwwHUbQ')" id="img" class="style-scope yt-img-shadow" alt="" width="100" style="padding-top: 10px;" src="https://i.ytimg.com/vi/sG3AmfvbNVk/hqdefault.jpg?sqp=-oaymwEYCKgBEF5IVfKriqkDCwgBFQAAiEIYAXAB&amp;rs=AOn4CLBeYRX8X8bWjv3iIzw5QLu6UZ0bZg">
-
-	</div>
-
-	<div class="col-md-8">
-		<h4 class="style-scope ytd-playlist-panel-video-renderer">
-			<ytd-badge-supported-renderer class="style-scope ytd-playlist-panel-video-renderer" disable-upgrade="">
-			</ytd-badge-supported-renderer>
-
-			<span id="video-title" class="style-scope ytd-playlist-panel-video-renderer" title="EM ƠI LÊN PHỐ | NGUYỄN ĐÌNH VŨ | MINH VƯƠNG M4U | LIVE LOOPING | COVER">
-				EM ƠI LÊN PHỐ | NGUYỄN ĐÌNH VŨ | MINH VƯƠNG M4U | LIVE LOOPING | COVER
-			</span>
-
-
-		</h4>
-		<div id="byline-containerz" class="style-scope ytd-playlist-panel-video-renderer">
-			<span id="byline" class="style-scope ytd-playlist-panel-video-renderer">Nguyễn Đình Vũ Official</span>
-			<ytd-badge-supported-renderer class="style-scope ytd-playlist-panel-video-renderer" disable-upgrade="">
-			</ytd-badge-supported-renderer>
+	@foreach($new_eposide as $eps)
+	<div class="item-video">
+		<div onclick="editSrc('https://www.youtube.com/embed/{{$eps->id_youtobe}}')" class="col-md-4">
+			<img onclick="editSrc('https://www.youtube.com/embed/dkFnNB-s-G4')"id="img" class="style-scope yt-img-shadow" alt="" width="100" src="{{$eps->image}}">
 		</div>
-	</div>
 		<div class="col-md-8">
-		<h4 class="style-scope ytd-playlist-panel-video-renderer">
-			<ytd-badge-supported-renderer class="style-scope ytd-playlist-panel-video-renderer" disable-upgrade="">
-			</ytd-badge-supported-renderer>
-
-			<span id="video-title" class="style-scope ytd-playlist-panel-video-renderer" title="EM ƠI LÊN PHỐ | NGUYỄN ĐÌNH VŨ | MINH VƯƠNG M4U | LIVE LOOPING | COVER">
-				EM ƠI LÊN PHỐ | NGUYỄN ĐÌNH VŨ | MINH VƯƠNG M4U | LIVE LOOPING | COVER
-			</span>
-
-
-		</h4>
-		<div id="byline-containerz" class="style-scope ytd-playlist-panel-video-renderer">
-			<span id="byline" class="style-scope ytd-playlist-panel-video-renderer">Nguyễn Đình Vũ Official</span>
-			<ytd-badge-supported-renderer class="style-scope ytd-playlist-panel-video-renderer" disable-upgrade="">
-			</ytd-badge-supported-renderer>
+			<h4 class="style-scope ytd-playlist-panel-video-renderer">
+				<span onclick="editSrc" id="video-title" class="style-scope ytd-playlist-panel-video-renderer" title="">
+					{{$eps->name}}
+				</span>
+			</h4>
+			<div id="byline-containerz" class="style-scope ytd-playlist-panel-video-renderer">
+				<span id="byline" class="style-scope ytd-playlist-panel-video-renderer">{{$eps->singer}}</span>
+			</div>
 		</div>
 	</div>
-	
-	<div class="col-md-8">
-		<h4 class="style-scope ytd-playlist-panel-video-renderer">
-			<ytd-badge-supported-renderer class="style-scope ytd-playlist-panel-video-renderer" disable-upgrade="">
-			</ytd-badge-supported-renderer>
-
-			<span id="video-title" class="style-scope ytd-playlist-panel-video-renderer" title="EM ƠI LÊN PHỐ | NGUYỄN ĐÌNH VŨ | MINH VƯƠNG M4U | LIVE LOOPING | COVER">
-				EM ƠI LÊN PHỐ | NGUYỄN ĐÌNH VŨ | MINH VƯƠNG M4U | LIVE LOOPING | COVER
-			</span>
-
-
-		</h4>
-		<div id="byline-containerz" class="style-scope ytd-playlist-panel-video-renderer">
-			<span id="byline" class="style-scope ytd-playlist-panel-video-renderer">Nguyễn Đình Vũ Official</span>
-			<ytd-badge-supported-renderer class="style-scope ytd-playlist-panel-video-renderer" disable-upgrade="">
-			</ytd-badge-supported-renderer>
-		</div>
-	</div>
-
-	<div class="col-md-8">
-		<h4 class="style-scope ytd-playlist-panel-video-renderer">
-			<ytd-badge-supported-renderer class="style-scope ytd-playlist-panel-video-renderer" disable-upgrade="">
-			</ytd-badge-supported-renderer>
-
-			<span id="video-title" class="style-scope ytd-playlist-panel-video-renderer" title="EM ƠI LÊN PHỐ | NGUYỄN ĐÌNH VŨ | MINH VƯƠNG M4U | LIVE LOOPING | COVER">
-				EM ƠI LÊN PHỐ | NGUYỄN ĐÌNH VŨ | MINH VƯƠNG M4U | LIVE LOOPING | COVER
-			</span>
-
-
-		</h4>
-		<div id="byline-containerz" class="style-scope ytd-playlist-panel-video-renderer">
-			<span id="byline" class="style-scope ytd-playlist-panel-video-renderer">Nguyễn Đình Vũ Official</span>
-			<ytd-badge-supported-renderer class="style-scope ytd-playlist-panel-video-renderer" disable-upgrade="">
-			</ytd-badge-supported-renderer>
-		</div>
-	</div>
-
+	@endforeach
 </div>
 
 

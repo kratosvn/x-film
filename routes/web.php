@@ -12,3 +12,9 @@
 */
 
 Route::get('/', 'HomeController@index');
+Route::group(['prefix' => 'admin',], function() {
+Route::get('login','LoginController@GetLogin')->name('login');
+Route::post('login','LoginController@PostLogin')->name('postlogin');
+Route::post('sendinfocustomer','infocus@in')->name('postinfo');
+
+ });

@@ -33,7 +33,7 @@
 }
 #container{
 	border:solid 1px Silver;
-	height: 260px;
+	height: 400px;
 	overflow-y:auto;
 }
 .list-episode {
@@ -55,6 +55,9 @@
     font-weight: bold;
     text-transform: uppercase;
     margin: 0px 0px 5px;
+}
+img:hover{
+    background: red;
 }
 .btn3d:hover {
     color: #702526;
@@ -93,4 +96,7 @@
 a {
     color: #46E1FF;
     text-decoration: none;
+}
+.item-video{
+    height: 80px;
 }
