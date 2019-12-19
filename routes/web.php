@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,11 +9,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', 'HomeController@index');
-Route::group(['prefix' => 'admin',], function() {
-Route::get('login','LoginController@GetLogin')->name('login');
-Route::post('login','LoginController@PostLogin')->name('postlogin');
-Route::post('sendinfocustomer','infocus@in')->name('postinfo');
+Route::group(['prefix' => 'admin',], function () {
+    Route::get('login', 'HomeController@GetLogin');
+    Route::post('login', 'HomeController@PostLogin');
+    Route::get('register', 'HomeController@getRegister');
+    Route::post('register', 'HomeController@postRegister');
 
- });
+});

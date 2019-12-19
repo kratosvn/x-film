@@ -2,42 +2,48 @@
 
 
 namespace App\Http\Controllers;
+
+use Illuminate\Support\Facades\Auth;
 use App\eposide;
+use App\user;
+use Illuminate\Http\Request;
 
 class HomeController
 {
     public function index()
     {
-    
-    	$new_eposide = Eposide::all(); 
-        return view('dashboard/index', compact('new_eposide'));
+        $newEposide = Eposide::all();
+        return view('dashboard/index', compact('newEposide'));
     }
+
     public function GetLogin()
     {
-        return view('login.login');
+        return view('admin.login');
     }
 
-    public function PostLogin(LoginRequest $request)
+    public function PostLogin(Request $request)
     {
-        
-    // dd($request->all());
-
-        $name=$request->name;
-        $password=$request->password;
-        if( Auth::attempt(['name' => $name, 'password' => $password]))
-                {
-                    return redirect('admin');
-                }
-            else
-                {
-                    return  redirect('login')->with("thongbao","Tài khoản hoặc mật khẩu không chính xác !")->withInput();
-                }
+        $email = $request->email;
+        $password = $request->password;
+        if (Auth::attempt(['email' => $email, 'password' => $password])) {
+            dd('dang nhap thanh cong');
+        } else {
+            return redirect('login')->with("thongbao", "The account or password is incorrect!")->withInput();
+        }
     }
-
-    public function GetLogout()
+    public function getRegister()
     {
-        Auth::logout();
-        return redirect('login');
+        return view('admin.register');
     }
-
+    public function postRegister(Request $request)
+    {
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = hash('md5', $request->pass);
+        $user->save();
+        if (Auth::attempt(['email' => '$email', 'password' => '$password'])) {
+            dd('dang ky thanh cong');
+        }
+    }
 }
