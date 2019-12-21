@@ -44,17 +44,10 @@
             </script>
         @endif
         <div class=" w3l-form-group">
-            <label>Username</label>
-            <div class="group">
-                <i class="fas fa-user"></i>
-                <input type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Username"/>
-            </div>
-        </div>
-        <div class=" w3l-form-group">
             <label>Email</label>
             <div class="group">
                 <i class="fas fa-user"></i>
-                <input type="text" class="form-control" name="email" value="{{ old('mail') }}" placeholder="Username"/>
+                <input type="text" class="form-control" name="email" value="{{ old('mail') }}" placeholder="Email"/>
             </div>
         </div>
         <div class=" w3l-form-group">

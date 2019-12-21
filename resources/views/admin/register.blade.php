@@ -75,9 +75,6 @@
                 <input type="password" class="form-control" name="password" placeholder="Password"/>
             </div>
         </div>
-        <div class="forgot">
-            <p><input type="checkbox">Nhớ mật khẩu</p>
-        </div>
         <button type="submit">Đăng Ký</button>
     </form>
 </div>

@@ -4,8 +4,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
-use App\eposide;
-use App\user;
+use App\Eposide;
+use App\User;
 use Illuminate\Http\Request;
 
 class HomeController
@@ -18,32 +18,33 @@ class HomeController
 
     public function GetLogin()
     {
-        return view('admin.login');
+        return view('admin/login');
     }
 
     public function PostLogin(Request $request)
     {
-        $email = $request->email;
-        $password = $request->password;
-        if (Auth::attempt(['email' => $email, 'password' => $password])) {
+        $credentials = $request->only('email', 'password');
+        $checkLogin = Auth::attempt($credentials);
+        dd($credentials, $checkLogin);
+        if ($checkLogin) {
             dd('dang nhap thanh cong');
         } else {
-            return redirect('login')->with("thongbao", "The account or password is incorrect!")->withInput();
+            return redirect('admin/login')->with("thongbao", "The account or password is incorrect!")->withInput();
         }
     }
+
     public function getRegister()
     {
-        return view('admin.register');
+        return view('admin/register');
     }
+
     public function postRegister(Request $request)
     {
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->password = hash('md5', $request->pass);
+        $user->password = bcrypt($request->pass);
         $user->save();
-        if (Auth::attempt(['email' => '$email', 'password' => '$password'])) {
-            dd('dang ky thanh cong');
-        }
+        return redirect('admin/login');
     }
 }
