@@ -25,7 +25,6 @@ class HomeController
     {
         $credentials = $request->only('email', 'password');
         $checkLogin = Auth::attempt($credentials);
-        dd($credentials, $checkLogin);
         if ($checkLogin) {
             dd('dang nhap thanh cong');
         } else {
@@ -43,7 +42,7 @@ class HomeController
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->password = bcrypt($request->pass);
+        $user->password = bcrypt($request->password);
         $user->save();
         return redirect('admin/login');
     }
