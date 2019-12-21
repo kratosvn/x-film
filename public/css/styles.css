@@ -32,7 +32,10 @@ p.w3l-register-p {
     text-align: center;
     margin-top: 2em;
 }
-
+.frame{
+    color: red;
+    border-color: red;
+}
 .w3l-login-form {
     background: rgba(0, 0, 0, 0.4117647058823529);
     max-width: 500px;
@@ -46,6 +49,7 @@ p.w3l-register-p {
     display: flex;
     padding: 15px 5px;
     background-color: #ffffff;
+    border-color: red;
 }
 
 .group i {

@@ -32,21 +32,6 @@
                 alert('{{session('thongbao')}}')
             </script>
         @endif
-        @if($errors->has('name'))
-            <script>
-                alert('$errors->first("name")')
-            </script>
-        @endif
-        @if($errors->has('email'))
-            <script>
-                alert('$errors->first("email")')
-            </script>
-        @endif
-        @if($errors->has('password'))
-            <script>
-                alert('$errors->first("password")')
-            </script>
-        @endif
         <div class=" w3l-form-group">
             <label>Username</label>
             <div class="group">
@@ -60,6 +45,9 @@
                 <i class="fas fa-user"></i>
                 <input type="text" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email"/>
             </div>
+            @if($errors->has('email'))
+                <p class="frame">{{$errors->first('email')}}</p>
+            @endif
         </div>
         <div class=" w3l-form-group">
             <label>Password</label>
@@ -67,6 +55,9 @@
                 <i class="fas fa-unlock"></i>
                 <input type="password" class="form-control" name="password" placeholder="Password"/>
             </div>
+            @if($errors->has('password'))
+                <p class="frame">{{$errors->first('password')}}</p>
+            @endif
         </div>
         <div class=" w3l-form-group">
             <label>Nhập lại password</label>
