@@ -50,7 +50,7 @@ class HomeController
     {
         //required không được để trống các trường
         $rules = [
-            'name' => 'required|name',
+            'name' => 'required|max:32',
             // không đê trông email
             'email' => 'required|email',
             // yêu cầu mk it nhât 8 ky tự
@@ -58,7 +58,7 @@ class HomeController
         ];
         //thông báo cho người dùng
         $messages = [
-            'name.required' => 'Trường name là trường bắt buộc',
+            'name.max' => 'Trường name là trường bắt buộc',
             // bắt buộc co email
             'email.required' => 'Email là trường bắt buộc!',
             // mk phải co 8 ky tụ
