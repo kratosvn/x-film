@@ -1,0 +1,36 @@
+version: "3"
+services:
+
+  mysql:
+    image: mysql:5.7
+    ports:
+      - "33069:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 1
+      MYSQL_USER: scn
+      MYSQL_PASSWORD: 22AYMXmXzrzF4SLn
+      MYSQL_DATABASE: platform_staging
+      MYSQL_ROOT_HOST: "%"
+    volumes:
+      - $GOPATH/tmp/mysql_data:/var/lib/mysql
+      - $GOPATH/src/capp-api/tools/db/mysql/config:/etc/mysql/conf.d
+      - $GOPATH/src/capp-api/tools/db/mysql/init:/docker-entrypoint-initdb.d
+
+  mongodb:
+    image: mongo:3.6
+    environment:
+      - MONGODB_ADMIN_USER=admin
+      - MONGODB_ADMIN_PASS=adminpass
+      - MONGODB_APPLICATION_DATABASE=mytestdatabase
+      - MONGODB_APPLICATION_USER=bkgo
+      - MONGODB_APPLICATION_PASS=bkgopass
+    ports:
+      - 27089:27017
+    volumes:
+      - ~/code/mongo/tmp/mongodb_data:/data/db
+      - ~/code/mongo/deploy/mongodb/init:/docker-entrypoint-initdb.d
+
+  # redis:
+  #   image: redis:3.2
+  #   ports:
+  #     - 6379:6379
