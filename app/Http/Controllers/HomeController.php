@@ -58,7 +58,7 @@ class HomeController
         ];
         //thông báo cho người dùng
         $messages = [
-            'name.required' => 'Là trường bắt buộc',
+            'name.required' => 'Trường name là trường bắt buộc',
             // bắt buộc co email
             'email.required' => 'Email là trường bắt buộc!',
             // mk phải co 8 ky tụ
