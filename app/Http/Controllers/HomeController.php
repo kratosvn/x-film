@@ -18,13 +18,13 @@ class HomeController
         return view('dashboard/index', compact('newEposide'));
     }
 
-    public function GetLogin()
+    public function getLogin()
     {
         // trả về trang đăng nhập
         return view('admin/login');
     }
 
-    public function PostLogin(Request $request)
+    public function postLogin(Request $request)
     {
         //lấy thông tin email và mật khẩu của người dùng
         $credentials = $request->only('email', 'password');
