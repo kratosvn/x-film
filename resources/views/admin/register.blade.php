@@ -38,6 +38,9 @@
                 <i class="fas fa-user"></i>
                 <input type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Username"/>
             </div>
+            @if($errors->has('name'))
+                <p class="frame">{{$errors->first('name')}}</p>
+            @endif
         </div>
         <div class=" w3l-form-group">
             <label>Email</label>

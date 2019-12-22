@@ -50,6 +50,7 @@ class HomeController
     {
         //required không được để trống các trường
         $rules = [
+            'name' => 'required|name',
             // không đê trông email
             'email' => 'required|email',
             // yêu cầu mk it nhât 8 ky tự
@@ -57,6 +58,7 @@ class HomeController
         ];
         //thông báo cho người dùng
         $messages = [
+            'name.required' => 'Là trường bắt buộc',
             // bắt buộc co email
             'email.required' => 'Email là trường bắt buộc!',
             // mk phải co 8 ky tụ
@@ -68,14 +70,14 @@ class HomeController
         $validator = Validator::make($request->all(), $rules, $messages);
 
         //kiểm tra nó validator hay chưa
-        if ($validator->fails()){
+        if ($validator->fails()) {
             // trả vè thông báo lôi
             return redirect()->back()->withErrors($validator);
         }
         // kiểm tra sự tồn tại của email
         $user = User::where('email', $request->email)->first();
         // điều kiện $user khác null
-        if($user != null){
+        if ($user != null) {
             // trả vè thông báo lôi
             return redirect('admin/register')->with("thongbao", 'email đa tồn tại')->withInput();
         }
