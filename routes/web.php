@@ -15,5 +15,5 @@ Route::group(['prefix' => 'admin',], function () {
     Route::post('login', 'HomeController@postLogin');
     Route::get('register', 'HomeController@getRegister');
     Route::post('register', 'HomeController@postRegister');
-
+    Route::get('/', 'FilmController@index');
 });
