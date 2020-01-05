@@ -10,7 +10,7 @@
 @section('body')
 <script>
 	function editSrc(url){
-		document.getElementById("video").src = url;
+		document.getElementById("video").src = url+'?autoplay=1';
 
 	}
 	$(function(){
@@ -18,7 +18,7 @@
 	});
 </script>
 <div class="col-md-8 container-flex">
-	<iframe id="video" width="700" height="400" src="https://www.youtube.com/embed/E4K7sqFsQ-k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	<iframe id="video" width="700" height="400" src="https://www.youtube.com/embed/E4K7sqFsQ-k?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 <div class="col-md-4" id="container">
 	<h4>Danh sách phim</h4>

@@ -33,7 +33,7 @@ class HomeController
         // kiểm tra điều kiên
         if ($checkLogin) {
             // đúng đăng nhập thành công
-            dd('dang nhap thanh cong');
+            dd('đăng nhập thành công');
         } else {
             //sai thông báo lỗi
             return redirect('admin/login')->with("thongbao", "The account or password is incorrect!")->withInput();
