@@ -13,12 +13,12 @@ class FilmController
     public function index(Request $request)
     {
 
-       if ( isset($request->keyword)){
-           $key = '%'.$request->keyword.'%';
-           $film = Film::where('name','like', $key )->get();
-       }else{
-           $film = Film::all();
-       }
+        if (isset($request->keyword)) {
+            $key = '%' . $request->keyword . '%';
+            $film = Film::where('name', 'like', $key)->get();
+        } else {
+            $film = Film::all();
+        }
         return view('admin/index', ['film' => $film]);
     }
 
@@ -80,9 +80,11 @@ class FilmController
         $film->name = $request->name;
         $film->description = $request->description;
         $film->save();
-        return redirect('admin/edit/'.$id)->with('thongbao', 'Sửa Thành Công');
+        return redirect('admin/edit/' . $id)->with('thongbao', 'Sửa Thành Công');
     }
-    public  function getDelete($id){
+
+    public function getDelete($id)
+    {
         $film = Film::where('id', $id)->first();
         $film->delete();
         return redirect('admin')->with('thongbao', 'xóa thành công');
