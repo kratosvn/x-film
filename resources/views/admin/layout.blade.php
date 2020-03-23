@@ -34,7 +34,7 @@
                     </ul>
                 </li> <!--end of dropdown menu example-->
                 <li class="active">
-                    <a href="#">Film manager</a>
+                    <a href="">Film manager</a>
                 </li>
             </ul>
         </nav>

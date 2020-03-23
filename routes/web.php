@@ -15,5 +15,14 @@ Route::group(['prefix' => 'admin',], function () {
     Route::post('login', 'HomeController@postLogin');
     Route::get('register', 'HomeController@getRegister');
     Route::post('register', 'HomeController@postRegister');
-    Route::get('/', 'FilmController@index');
 });
+
+Route::group(['prefix' => 'admin',], function (){
+    Route::get('/', 'FilmController@index');
+    Route::get('addfilm', 'Filmcontroller@add');
+    Route::post('addfilm', 'Filmcontroller@postAdd');
+    Route::get('edit/{id}', 'Filmcontroller@getEdit');
+    Route::post('edit/{id}', 'Filmcontroller@postEdit');
+    Route::get('delete/{id}', 'Filmcontroller@getDelete');
+});
+
